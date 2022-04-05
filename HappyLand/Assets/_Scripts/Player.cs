@@ -192,12 +192,7 @@ public class Player : MonoBehaviour
         {
             playerLife = 100f;
         }
-
-
-
     }
-
-
 
     public void RestHeatl(float heal)
     {
@@ -206,8 +201,5 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Game Over");
         }
-
-
-
     }
 }

@@ -8,15 +8,16 @@ public class Heart : MonoBehaviour
     private AudioClip _heartSound;
     [SerializeField]
     private float healtQTY = 5.0f;
-    
+
     public void OnTriggerEnter(Collider other)
-    { 
-        if (other.tag == "player")
+    {
+        if (other.tag == "Player")
         {
-            Player player = other.GetComponent<Player>();
-            player.AddHeatl(healtQTY);
+            Debug.Log("Entra el player");
+            Player playerGame = other.GetComponent<Player>();
+            playerGame.AddHeatl(healtQTY);
             AudioSource.PlayClipAtPoint(_heartSound, transform.position, 1f);
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
     
