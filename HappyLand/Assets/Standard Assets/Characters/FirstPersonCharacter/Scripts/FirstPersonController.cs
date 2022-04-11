@@ -43,6 +43,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        //propios  
+        public bool hasCoin = false;
+        public float playerLife = 100;
+
         // Use this for initialization
         private void Start()
         {
@@ -255,6 +259,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+        public void AddHeatl(float heal)
+        {
+            playerLife = playerLife + heal;
+            if (playerLife > 100)
+            {
+                playerLife = 100f;
+            }
+        }
+        public void RestHeatl(float heal)
+        {
+            playerLife = playerLife - heal;
+            if (playerLife < 100)
+            {
+                Debug.Log("Game Over");
+            }
         }
     }
 }
