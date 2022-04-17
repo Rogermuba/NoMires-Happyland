@@ -6,12 +6,15 @@ public class Player : MonoBehaviour
 {
     private CharacterController _controller;
 
-    public float playerLife = 100; 
+    public float playerLife = 100;
+
+    
     
     [SerializeField]
     private float _speed =3.5f;
     [SerializeField]
     private float _gravity = 9.81f;
+    
     [SerializeField]
     private GameObject _muzzleFlash;
     [SerializeField]
@@ -97,6 +100,7 @@ public class Player : MonoBehaviour
                 }
         }
 
+       
     }
 
     void Shoot()
@@ -137,6 +141,8 @@ public class Player : MonoBehaviour
 
     void CalculateMovement()
     {
+        
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticallInput = Input.GetAxis("Vertical");
 
@@ -146,7 +152,11 @@ public class Player : MonoBehaviour
         //Convertir el vector velocity en world space. Toma los valores de velocity en local space y pasalos a world space y nuevamente asignalos
         velocity = transform.transform.TransformDirection(velocity);
         _controller.Move(velocity * Time.deltaTime);
+
+        
     }
+
+   
 
     public void RestLife(float injury)
     {
@@ -191,6 +201,15 @@ public class Player : MonoBehaviour
         if (playerLife > 100)
         {
             playerLife = 100f;
+        }
+    }
+
+    public void RemoveHealth(float heal)
+    {
+        playerLife = playerLife - heal;
+        if (playerLife == 0)
+        {
+            Debug.Log("GAME OVER");
         }
     }
 
