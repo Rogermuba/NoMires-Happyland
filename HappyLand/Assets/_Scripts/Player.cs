@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public float playerLife = 100;
 
-    
+    private float timeToDie = 0.0f;
     
     [SerializeField]
     private float _speed =3.5f;
@@ -206,7 +206,15 @@ public class Player : MonoBehaviour
 
     public void RemoveHealth(float heal)
     {
-        playerLife = playerLife - heal;
+        timeToDie += Time.deltaTime;
+        if (timeToDie >= 5.0f)
+        {
+            playerLife = playerLife - heal;
+            timeToDie = 0.0f;
+            Debug.Log("me quiereo matar" + timeToDie);
+        }
+
+        //playerLife = playerLife - heal;
         if (playerLife == 0)
         {
             Debug.Log("GAME OVER");
