@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/StartWindow.unity
     guid: fbe743f8c35b14641abe345004882b64
+  - enabled: 1
+    path: Assets/_scenes/Forest_Scene 1.unity
+    guid: 1cb3aa632f1d346f58e38e51cd4ceb6a
   m_configObjects: {}
