@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -207,7 +208,7 @@ public class Player : MonoBehaviour
     public void RemoveHealth(float heal)
     {
         timeToDie += Time.deltaTime;
-        if (timeToDie >= 5.0f)
+        if (timeToDie >= 2.0f)
         {
             playerLife = playerLife - heal;
             timeToDie = 0.0f;
@@ -218,6 +219,7 @@ public class Player : MonoBehaviour
         if (playerLife == 0)
         {
             Debug.Log("GAME OVER");
+            SceneManager.LoadScene(1);
         }
     }
 
