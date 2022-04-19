@@ -18,5 +18,5 @@ public class PoisonousWater : MonoBehaviour
             player.RemoveHealth(healthQTY);
             AudioSource.PlayClipAtPoint(_lessHealthSound, transform.position, 1f);
         }
-    }
+    }   
 }
