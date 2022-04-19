@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
         {
             playerLife = playerLife - heal;
             timeToDie = 0.0f;
-            Debug.Log("me quiereo matar" + timeToDie);
+            Debug.Log("funciona" + timeToDie);
         }
 
         //playerLife = playerLife - heal;
