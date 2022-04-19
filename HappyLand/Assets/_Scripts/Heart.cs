@@ -23,7 +23,7 @@ public class Heart : MonoBehaviour
                 playerGame.AddHeatl(healtQTY);
                 AudioSource.PlayClipAtPoint(_heartSound, transform.position, 1f);
 
-                //Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
         }
 
