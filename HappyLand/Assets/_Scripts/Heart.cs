@@ -9,7 +9,7 @@ public class Heart : MonoBehaviour
     private AudioClip _heartSound;
     [SerializeField]
     private float healtQTY = 5.0f;
-    public FirstPersonController fpc;
+    
 
 
     public void OnTriggerEnter(Collider other)

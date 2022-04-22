@@ -201,8 +201,8 @@ public class Player : MonoBehaviour
         playerLife = playerLife + heal;
         if (playerLife > 100)
         {
-            playerLife = 100f;
-        }
+            playerLife = 100f;  
+        }   
     }
 
     public void RemoveHealth(float heal)
