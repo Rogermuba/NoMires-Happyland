@@ -3729,6 +3729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &212628365
 MeshCollider:
@@ -3942,6 +3943,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &219122839
 MeshCollider:
@@ -4373,6 +4375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &235944638
 MeshCollider:
@@ -4855,6 +4858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &265745683
 MeshCollider:
@@ -5236,6 +5240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &305509810
 MeshCollider:
@@ -11607,6 +11612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &711073798
 MeshCollider:
@@ -12004,12 +12010,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954726919292774954, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
-      propertyPath: m_IsTrigger
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954726919292774954, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954726919292774954, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954726919292774957, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
       propertyPath: m_Name
       value: PP_Mushroom_Fantasy_Orange_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8954726919292774957, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
+      propertyPath: m_TagString
+      value: Hongo
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
@@ -14160,6 +14178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &851782717
 MeshCollider:
@@ -18231,6 +18250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1138705898
 MeshCollider:
@@ -21808,6 +21828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1363473940
 MeshCollider:
@@ -23384,6 +23405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1484767351
 MeshCollider:
@@ -23737,20 +23759,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8954726919292774957, guid: eae42a57b046b1a42a79ae6319bccca3, type: 3}
   m_PrefabInstance: {fileID: 725433257}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1517191830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517191829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18a6c52d34ecd22489986be0eb95fca3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
-  healthQTY: 7
 --- !u!65 &1517191835
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23759,7 +23767,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517191829}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.30456752, y: 0.39903262, z: 0.15115266}
@@ -28124,6 +28132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1754103446
 MeshCollider:
@@ -28253,6 +28262,7 @@ GameObject:
   - component: {fileID: 1763954920}
   - component: {fileID: 1763954924}
   - component: {fileID: 1763954925}
+  - component: {fileID: 1763954926}
   m_Layer: 0
   m_Name: Lago
   m_TagString: Untagged
@@ -28347,8 +28357,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763954919}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 9.999999, y: 1.8497745, z: 10}
   m_Center: {x: 0, y: -0.92488724, z: 0}
@@ -28365,7 +28375,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 1763954926}
   healthQTY: 10
+--- !u!82 &1763954926
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763954919}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1767347096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29200,6 +29307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1829221250
 MeshCollider:
@@ -31022,6 +31130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &1941053501
 MeshCollider:
@@ -32562,6 +32671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &2019067459
 MeshCollider:
@@ -33108,6 +33218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &2049892478
 MeshCollider:
@@ -33444,6 +33555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lessHealthSound: {fileID: 8300000, guid: 99319ca7b25636f4a983ee8f61bc135f, type: 3}
+  audio1: {fileID: 0}
   healthQTY: 40
 --- !u!64 &2096627962
 MeshCollider:

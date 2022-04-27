@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class Player : MonoBehaviour
 
     public float playerLife = 100;
 
-    private float timeToDie = 0.0f;
-    
+    //private float timeToDie = 0.0f;
+
     [SerializeField]
-    private float _speed =3.5f;
+    private float _speed = 3.5f;
     [SerializeField]
     private float _gravity = 9.81f;
-    
+
     [SerializeField]
     private GameObject _muzzleFlash;
     [SerializeField]
@@ -32,18 +33,27 @@ public class Player : MonoBehaviour
     private IU_Manager _uiManager;
 
     public bool hasCoin = false;
-    
+
     [SerializeField]
     private GameObject _weapon;
 
     [SerializeField]
     private GameObject _knife;
 
-    public bool knifeActive=false;
+    public bool knifeActive = false;
 
-    public bool weaponActive=true;
+    public bool weaponActive = true;
 
-  
+   
+    public bool timerIsRunning = true;
+    public float timeRemaining = 100;
+
+    public Image blood;
+    public Color color1=Color.white;
+    public float changecolor;
+    public Color startColor;
+    public Color endColor;
+    public float t;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,55 +63,60 @@ public class Player : MonoBehaviour
         //Inicia la cantidad de balas
         currentAmmo = maxAmmo;
         _uiManager = GameObject.Find("Canvas").GetComponent<IU_Manager>();
-        _uiManager.UpdateAmmo(currentAmmo);        
-
+        _uiManager.UpdateAmmo(currentAmmo);
+        t = (Time.time - 100) * 0.01f;
+        startColor = new Color(255, 255, 255, 0.01f);
+        endColor= new Color(255, 255, 255, 1f);
+        color1 = new Color(255,255,255,0.01f);
+        blood.color = color1;
     }
 
-  
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0) && currentAmmo > 0)
-        { 
-            if(knifeActive==false)
-            Shoot();
+        if (Input.GetMouseButton(0) && currentAmmo > 0)
+        {
+            if (knifeActive == false)
+                Shoot();
         }
         else
-            { 
-                _muzzleFlash.SetActive(false);  
-                _weaponAudio.Stop();
-            }
+        {
+            _muzzleFlash.SetActive(false);
+            _weaponAudio.Stop();
+        }
 
-        if(Input.GetKeyDown(KeyCode.R) && _isReLoading == false)
+        if (Input.GetKeyDown(KeyCode.R) && _isReLoading == false)
         {
             _isReLoading = true;
             StartCoroutine(Reload());
         }
-        
+
         CalculateMovement();
-        if(Input.GetKeyDown(KeyCode.Escape))
-        { 
-            Cursor.visible= true;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        
-        if(hasCoin==true)
+
+        if (hasCoin == true)
         {
             _uiManager.CollectCoin();
         }
-        
-        if(Input.GetKeyDown(KeyCode.L))
-        {    
-            if(weaponActive==false)
-                 EnableWeapons();
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (weaponActive == false)
+                EnableWeapons();
             else
-                {
+            {
                 EnableKnife();
 
-                }
+            }
         }
+        TimerCOuntDown();
+        blood.color = color1;
 
-       
     }
 
     void Shoot()
@@ -111,9 +126,9 @@ public class Player : MonoBehaviour
         currentAmmo = currentAmmo - 1;
         _uiManager.UpdateAmmo(currentAmmo);
         if (_weaponAudio.isPlaying == false)
-            {
+        {
             _weaponAudio.Play();
-            }
+        }
         Ray rayOrigin = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hitInfo;
         if (Physics.Raycast(rayOrigin, out hitInfo))
@@ -124,9 +139,9 @@ public class Player : MonoBehaviour
             //Check if we hit the create
             //Destroy Create Method
             Destructable create = hitInfo.transform.GetComponent<Destructable>();
-            if(create!=null)
+            if (create != null)
             {
-                create.DestroyCreate();                
+                create.DestroyCreate();
             }
 
         }
@@ -134,15 +149,15 @@ public class Player : MonoBehaviour
 
     IEnumerator Reload()
     {
-       yield return new WaitForSeconds (1f);
-       currentAmmo = maxAmmo;
-       _uiManager.UpdateAmmo(currentAmmo);
-       _isReLoading = false;
+        yield return new WaitForSeconds(1f);
+        currentAmmo = maxAmmo;
+        _uiManager.UpdateAmmo(currentAmmo);
+        _isReLoading = false;
     }
 
     void CalculateMovement()
     {
-        
+
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticallInput = Input.GetAxis("Vertical");
@@ -154,17 +169,17 @@ public class Player : MonoBehaviour
         velocity = transform.transform.TransformDirection(velocity);
         _controller.Move(velocity * Time.deltaTime);
 
-        
+
     }
 
-   
+
 
     public void RestLife(float injury)
     {
         playerLife = playerLife - injury;
-        if(playerLife<=0)
+        if (playerLife <= 0)
         {
-         GameManager.Instance.GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 
@@ -172,16 +187,16 @@ public class Player : MonoBehaviour
 
     public void EnableWeapons()
     {
-        if(weaponActive == false)
+        if (weaponActive == false)
         {
             Debug.Log("Cambia a arma");
             _weapon.SetActive(true);
             _knife.SetActive(false);
             knifeActive = false;
             weaponActive = true;
-            
+
         }
-                   
+
     }
 
     public void EnableKnife()
@@ -201,26 +216,37 @@ public class Player : MonoBehaviour
         playerLife = playerLife + heal;
         if (playerLife > 100)
         {
-            playerLife = 100f;  
-        }   
+            playerLife = 100f;
+        }
     }
 
     public void RemoveHealth(float heal)
     {
-        timeToDie += Time.deltaTime;
-        if (timeToDie >= 2.0f)
-        {
-            playerLife = playerLife - heal;
-            timeToDie = 0.0f;
-            Debug.Log("funciona" + timeToDie);
-        }
 
-        //playerLife = playerLife - heal;
+        //timeToDie += Time.deltaTime;
+        //if (timeToDie >= 2.0f)
+        //{
+         //   playerLife = playerLife - heal;
+           // timeToDie = 0.0f;
+           // Debug.Log("funciona" + timeToDie);
+           // changecolor += color1.a * 0.5f;
+           // color1 = new Color(255, 255, 255, changecolor);
+           // blood.color = color1;
+        //}
+
+
+
+        playerLife = playerLife - heal;
         if (playerLife == 0)
         {
             Debug.Log("GAME OVER");
             SceneManager.LoadScene(1);
+            color1 =  Color.Lerp(startColor, endColor, t);
+           // color1 = new Color(255, 255, 255, changecolor);
+            blood.color = color1;
         }
+
+
     }
 
     public void RestHeatl(float heal)
@@ -231,4 +257,53 @@ public class Player : MonoBehaviour
             Debug.Log("Game Over");
         }
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+       
+        timeRemaining = 100;
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Hongo"))
+        {
+            if (timerIsRunning)
+            {
+                if (playerLife > 10)
+                {
+                   
+                    if (timeRemaining > 2)
+                    {
+                        TimerCOuntDown();
+                        for (int i = 10; i >= 0; i--)
+                        {
+                            playerLife = playerLife - 1;
+                          
+
+                        }
+                        if (playerLife <= 10)
+                        {
+                            timerIsRunning = false;
+                        }
+                    }
+                    else
+                    {
+                        timeRemaining = 100;
+                        timerIsRunning = false;
+                    }
+                }
+            }
+            
+
+        }
+    }
+
+   public void OnTriggerExit(Collider other)
+    {
+        timeRemaining = 100;
+        timerIsRunning = true;
+    }
+
+    public void TimerCOuntDown() {
+        timeRemaining -= Time.deltaTime;
+    }
+
 }
