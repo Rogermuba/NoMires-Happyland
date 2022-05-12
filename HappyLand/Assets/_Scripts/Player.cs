@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     private CharacterController _controller;
-
+    private float timeToDie = 0.0f;     
     public float playerLife = 100;
 
     //private float timeToDie = 0.0f;
-
+    [HideInInspector] public bool isImmune = false;
     [SerializeField]
     private float _speed = 3.5f;
     [SerializeField]
@@ -51,8 +51,7 @@ public class Player : MonoBehaviour
     public Image blood;
     public Color color1=Color.white;
     public float changecolor;
-    public Color startColor;
-    public Color endColor;
+   
     public float t;
     // Start is called before the first frame update
     void Start()
@@ -65,8 +64,7 @@ public class Player : MonoBehaviour
         _uiManager = GameObject.Find("Canvas").GetComponent<IU_Manager>();
         _uiManager.UpdateAmmo(currentAmmo);
         t = (Time.time - 100) * 0.01f;
-        startColor = new Color(255, 255, 255, 0.01f);
-        endColor= new Color(255, 255, 255, 1f);
+        
         color1 = new Color(255,255,255,0.01f);
         blood.color = color1;
     }
@@ -116,6 +114,7 @@ public class Player : MonoBehaviour
         }
         TimerCOuntDown();
         blood.color = color1;
+
 
     }
 
@@ -222,16 +221,30 @@ public class Player : MonoBehaviour
 
     public void RemoveHealth(float heal)
     {
+        if (isImmune) return;
+
+        timeToDie += Time.deltaTime;
+        if (timeToDie >= 2.0f)
+        {
+            playerLife = playerLife - heal;
+   
+            timeToDie = 0.0f;
+            Debug.Log("funciona" + timeToDie);
+            //playerLife = playerLife - heal;
+            if (playerLife == 0)
+
+                Debug.Log("GAME OVER");
+        }
 
         //timeToDie += Time.deltaTime;
         //if (timeToDie >= 2.0f)
         //{
-         //   playerLife = playerLife - heal;
-           // timeToDie = 0.0f;
-           // Debug.Log("funciona" + timeToDie);
-           // changecolor += color1.a * 0.5f;
-           // color1 = new Color(255, 255, 255, changecolor);
-           // blood.color = color1;
+        //   playerLife = playerLife - heal;
+        // timeToDie = 0.0f;
+        // Debug.Log("funciona" + timeToDie);
+        // changecolor += color1.a * 0.5f;
+        // color1 = new Color(255, 255, 255, changecolor);
+        // blood.color = color1;
         //}
 
 
@@ -241,9 +254,12 @@ public class Player : MonoBehaviour
         {
             Debug.Log("GAME OVER");
             SceneManager.LoadScene(1);
-            color1 =  Color.Lerp(startColor, endColor, t);
-           // color1 = new Color(255, 255, 255, changecolor);
-            blood.color = color1;
+            while (10 < Time.deltaTime) {
+                changecolor=Mathf.Lerp(0.01f,1f,10/Time.deltaTime);
+                color1 = new Color(255, 255, 255, changecolor);
+                blood.color = color1;
+            }
+          
         }
 
 

@@ -68,7 +68,9 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
     <Compile Include="Assets\_Scripts\Collectable.cs" />
+    <Compile Include="Assets\Mostrar Mensajes en Pantalla - GameDevTraum\PruebaSistemaMensajes.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\_Scripts\IA.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\PostProcessingProfile.cs" />
     <Compile Include="Assets\Laterns and candles\scripts\CameraFacing.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\Propio\script\seguir.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\Mostrar Mensajes en Pantalla - GameDevTraum\InterfazDeUsuario.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\UserLutComponent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\_Scripts\Heart.cs" />
@@ -178,6 +181,7 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\_Scripts\nodaño.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />

@@ -3,6 +3,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
+
 
 #pragma warning disable 618, 649
 namespace UnityStandardAssets.Characters.FirstPerson
@@ -29,6 +31,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -46,6 +49,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         //propios  
         public bool hasCoin = false;
         public float playerLife = 100;
+        [HideInInspector] public bool isImmune = false;
 
         // Use this for initialization
         private void Start()
@@ -274,6 +278,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (playerLife < 100)
             {
                 Debug.Log("Game Over");
+            }
+        }
+
+        public void RemoveHealth(float heal)
+        {
+
+            //timeToDie += Time.deltaTime;
+            //if (timeToDie >= 2.0f)
+            //{
+            //   playerLife = playerLife - heal;
+            // timeToDie = 0.0f;
+            // Debug.Log("funciona" + timeToDie);
+            // changecolor += color1.a * 0.5f;
+            // color1 = new Color(255, 255, 255, changecolor);
+            // blood.color = color1;
+            //}
+
+
+
+            playerLife = playerLife - heal;
+            if (playerLife == 0)
+            {
+                Debug.Log("GAME OVER");
+                SceneManager.LoadScene(1);
             }
         }
     }

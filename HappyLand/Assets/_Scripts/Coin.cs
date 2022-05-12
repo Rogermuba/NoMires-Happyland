@@ -16,8 +16,8 @@ public class Coin : MonoBehaviour
         if(other.tag == "Player")
         { 
           if(Input.GetKeyDown(KeyCode.E))
-          { 
-               Player player = other.GetComponent<Player>();
+          {
+                FirstPersonController player = other.GetComponent<FirstPersonController>();
                 if(player != null)
                 {
                    Debug.Log("recoge moneda");

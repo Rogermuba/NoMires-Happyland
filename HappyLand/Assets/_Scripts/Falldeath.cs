@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 public class Falldeath : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +15,7 @@ public class Falldeath : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Player player = other.GetComponent<Player>();
+            FirstPersonController player = other.GetComponent<FirstPersonController>();
             player.RemoveHealth(healthQTY);
             AudioSource.PlayClipAtPoint(_lessHealthSound, transform.position, 1f);
             SceneManager.LoadScene(1);
