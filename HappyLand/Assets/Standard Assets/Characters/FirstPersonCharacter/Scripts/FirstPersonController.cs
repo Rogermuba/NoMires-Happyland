@@ -281,20 +281,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
+        private float timeToDie = 0.0f;
+
         public void RemoveHealth(float heal)
         {
 
-            //timeToDie += Time.deltaTime;
-            //if (timeToDie >= 2.0f)
-            //{
-            //   playerLife = playerLife - heal;
-            // timeToDie = 0.0f;
-            // Debug.Log("funciona" + timeToDie);
-            // changecolor += color1.a * 0.5f;
-            // color1 = new Color(255, 255, 255, changecolor);
-            // blood.color = color1;
-            //}
+            if (isImmune) return;
 
+            timeToDie += Time.deltaTime;
+            if (timeToDie >= 2.0f)
+            {
+                playerLife = playerLife - heal;
+
+                timeToDie = 0.0f;
+                Debug.Log("funciona" + timeToDie);
+                //playerLife = playerLife - heal;
+                if (playerLife == 0)
+
+                    Debug.Log("GAME OVER");
+            }
 
 
             playerLife = playerLife - heal;

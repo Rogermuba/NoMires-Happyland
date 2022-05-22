@@ -221,20 +221,7 @@ public class Player : MonoBehaviour
 
     public void RemoveHealth(float heal)
     {
-        if (isImmune) return;
-
-        timeToDie += Time.deltaTime;
-        if (timeToDie >= 2.0f)
-        {
-            playerLife = playerLife - heal;
-   
-            timeToDie = 0.0f;
-            Debug.Log("funciona" + timeToDie);
-            //playerLife = playerLife - heal;
-            if (playerLife == 0)
-
-                Debug.Log("GAME OVER");
-        }
+        
 
         //timeToDie += Time.deltaTime;
         //if (timeToDie >= 2.0f)

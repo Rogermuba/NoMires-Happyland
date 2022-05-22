@@ -11,6 +11,11 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Forest_Scene 1");
     }
 
-    
-    
+    public void BotonConfiguracion()
+    {
+        SceneManager.LoadScene("Opciones");
+    }   
+
+
+
 }

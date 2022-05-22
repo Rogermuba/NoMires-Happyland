@@ -11,12 +11,12 @@ public class Coin : MonoBehaviour
 
   
 
-    public void OnTriggerStay(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         { 
-          if(Input.GetKeyDown(KeyCode.E))
-          {
+          
+          
                 FirstPersonController player = other.GetComponent<FirstPersonController>();
                 if(player != null)
                 {
@@ -26,7 +26,7 @@ public class Coin : MonoBehaviour
                     Destroy(this.gameObject);
 
                 }
-          }
+          
         }
     }
 

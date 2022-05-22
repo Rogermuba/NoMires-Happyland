@@ -80,6 +80,7 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\_Scripts\MenuOpciones.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\_Scripts\Slot.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\BloomComponent.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="Assets\_Scripts\Destructable.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\DitheringComponent.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\PostProcessingComponent.cs" />
+    <Compile Include="Assets\_Scripts\nodaño.cs" />
+    <Compile Include="Assets\_Scripts\DoorScript.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
     <Compile Include="Assets\_Scripts\Coin.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
     <Compile Include="Assets\_Scripts\Inventory.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+    <Compile Include="Assets\_Scripts\KeyScript.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
     <Compile Include="Assets\Realistic Glitches Lite\Assets\Scripts\BWEffect.cs" />
@@ -175,13 +179,13 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\FogComponent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\_Scripts\Seguirjugador.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\NastyWizard_Depth\Demo\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\_Scripts\nodaño.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Realistic Glitches Lite\Assets\Shaders\BleedingColors.shader" />
